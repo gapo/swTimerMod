@@ -1,6 +1,6 @@
 # swTimerMod
 
-[!https://img.shields.io/badge/WIP-UNDER%20DEVELOPMENT-orange]
+![Work in progress](https://img.shields.io/badge/WIP-UNDER%20DEVELOPMENT-orange)
 
 This project is an attempt to author a software timer linux kernel module. 
 The timer will trigger a call back to a userspace function at expiry.
