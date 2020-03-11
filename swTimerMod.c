@@ -1,6 +1,8 @@
-// #include <linux/init.h>             // Macros used to mark up functions e.g., __init __exit
+// #include <linux/init.h>          // Macros used to mark up functions e.g., __init __exit
 #include <linux/module.h>           // Core header for loading LKMs into the kernel
 #include <linux/kernel.h>           // Contains types, macros, functions for the kernel
+#include <asm/current.h>            // for global item current
+#include <linux/sched.h>            // for struct task_struct
 
 MODULE_LICENSE("GPL");              ///< The license type -- this affects runtime behavior
 MODULE_AUTHOR("G Ponnu");      ///< The author -- visible when you use modinfo
