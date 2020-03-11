@@ -7,7 +7,7 @@ MODULE_AUTHOR("G Ponnu");      ///< The author -- visible when you use modinfo
 MODULE_DESCRIPTION("SWTimerModule");  ///< The description -- see modinfo
 MODULE_VERSION("0.1");              ///< The version of the module
 
-static char *name = "world";        ///< An example LKM argument -- default value is "world"
+static char *name = "swTimerMod";        ///< An example LKM argument -- default value is "world"
 module_param(name, charp, S_IRUGO); ///< Param desc. charp = char ptr, S_IRUGO can be read/not changed
 MODULE_PARM_DESC(name, "The name to display in /var/log/kern.log");  ///< parameter description
 
@@ -19,6 +19,8 @@ MODULE_PARM_DESC(name, "The name to display in /var/log/kern.log");  ///< parame
  */
 static int timerMod_init(void){
    printk(KERN_INFO "Hello!\n", name);
+   printk(KERN_INFO "The process is \"%s\" (pid %i)\n",
+        current->comm, current->pid);
    return 0;
 }
 
