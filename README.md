@@ -14,6 +14,8 @@ In particular, on low-cost computing platforms like the Raspberry Pi - this coul
 
 ## Getting Started:
 
+### Building
+
 Install Linux headers.
 
 In arch, 
@@ -23,4 +25,25 @@ $ sudo pacman -S linux-headers
 Then issue make
 ```
 $ make
+```
+
+### Loading and Unloading
+
+In order to run the module
+
+```
+# insmod swTimerMod.ko
+```
+Now the module will load and print information to the kernel log.
+Since Archlinux uses systemd -
+```
+# journalctl -xe
+```
+Mar 11 20:08:30  kernel: Hello!
+Mar 11 20:08:30  kernel: The process is "insmod" (pid 15545)
+
+To unload the module
+
+```
+# rmmod swTimerMod.ko
 ```
